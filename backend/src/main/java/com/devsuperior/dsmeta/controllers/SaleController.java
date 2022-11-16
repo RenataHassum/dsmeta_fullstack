@@ -2,6 +2,7 @@ package com.devsuperior.dsmeta.controllers;
 
 import com.devsuperior.dsmeta.entities.Sale;
 import com.devsuperior.dsmeta.services.SaleService;
+import com.devsuperior.dsmeta.services.SmsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,6 +18,9 @@ public class SaleController {
     @Autowired
     private SaleService service;
 
+    @Autowired
+    private SmsService smsService;
+
     @GetMapping
     public Page<Sale> findSales(
             @RequestParam(value = "minDate", defaultValue = "") String minDate,
@@ -24,5 +28,11 @@ public class SaleController {
             Pageable pageable) {
         return service.findSales(minDate, maxDate, pageable);
     }
+
+    @GetMapping("/notification")
+    public void notifySms() {
+        smsService.sendSms();
+    }
+
 
 }
