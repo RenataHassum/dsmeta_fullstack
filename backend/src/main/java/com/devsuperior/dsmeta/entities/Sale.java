@@ -15,7 +15,8 @@ public class Sale {
     private Double amount;
     private LocalDate date;
 
-    public Sale() {}
+    public Sale() {
+    }
 
     public Sale(Long id, String sellerName, Integer visited, Integer deals, Double amount, LocalDate date) {
         this.id = id;
