@@ -46,18 +46,5 @@ public class SmsService {
         System.out.println(message.getSid());
     }
 
-//    public void sendSms(Long saleId) {
-//
-//        Sale sale = saleRepository.findById(saleId).get();
-//        String msg = "Vendedor " + sale.getSellerName();
-//
-//        Twilio.init(twilioSid, twilioKey);
-//
-//        PhoneNumber to = new PhoneNumber(twilioPhoneTo);
-//        PhoneNumber from = new PhoneNumber(twilioPhoneFrom);
-//
-//        Message message = Message.creator(to, from, msg).create();
-//
-//        System.out.println(message.getSid());
-//    }
+
 }
